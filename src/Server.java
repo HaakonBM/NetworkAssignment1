@@ -1,4 +1,5 @@
 import java.io.*;
+import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.concurrent.ExecutorService;
@@ -11,7 +12,8 @@ public class Server {
 
         try (ServerSocket ss = new ServerSocket(5555)) {
             ExecutorService pool = Executors.newFixedThreadPool(5);
-            System.out.println("Email extraction server is up on IP "+ss.getInetAddress());
+            InetAddress inetAddress = InetAddress.getLocalHost();
+            System.out.println("Email extraction server is up on IP "+inetAddress);
             while (true) {
                 pool.execute(new ClientThread(ss.accept()));
             }

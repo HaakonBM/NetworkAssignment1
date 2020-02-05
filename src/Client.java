@@ -22,7 +22,10 @@ public class Client {
             while(true) {
                 System.out.print(">>> ");
                 query = keyboardInput.readLine();
-                if(query.equalsIgnoreCase("exit")) break;
+                if(query.equalsIgnoreCase("exit")) {
+                    System.out.println("Goodbye!");
+                    break;
+                }
 
                 out.println(query);
 
