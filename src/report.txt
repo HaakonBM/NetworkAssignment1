@@ -1,0 +1,13 @@
+Client-server architecture
+application layer: http/https, DNS
+transport layer: TCP
+
+how the app works: 
+Client initiates communication with server via socket.
+The socket contains ip of server and port.
+The server listens for communication on a set port number and accepts the client socket.
+Communication has been established. (TCP)
+Now the user types in a URL, the client then sends the URL to the server.
+Once received the server uses DNS and http/https to read the contens of the URL.
+The server sorts through the contents and returns an appropriate response (emails on webpage, no emails found, bad URL)
+to the client.
