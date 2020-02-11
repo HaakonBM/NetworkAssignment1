@@ -11,7 +11,7 @@ public class Client {
 
         try(
             BufferedReader keyboardInput = new BufferedReader(new InputStreamReader(System.in));) {
-            System.out.println("Type in IP address of server you wish to reach\n>>>");
+            System.out.print("Type in IP address of server you wish to reach\n>>>");
 
             IP=keyboardInput.readLine();
             Socket s = new Socket(IP, PORT);
@@ -20,7 +20,7 @@ public class Client {
 
             String query, sResponse;
             while(true) {
-                System.out.print(">>> ");
+                System.out.print("Connection established!\n>>> ");
                 query = keyboardInput.readLine();
                 if(query.equalsIgnoreCase("exit")) {
                     System.out.println("Goodbye!");
